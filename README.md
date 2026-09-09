@@ -30,7 +30,7 @@
 ### 安装
 
 ```bash
-git clone https://github.com/Trinity-Li/video-no-autopause.git
+git clone https://github.com/Trinity-Li/chaoxing-helper.git
 ```
 
 1. 打开 `chrome://extensions`（Edge 用 `edge://extensions`）
@@ -93,6 +93,12 @@ git clone https://github.com/Trinity-Li/video-no-autopause.git
 
 不联网、不上报、不读取页面内容。唯一写入浏览器本地的数据是工具栏图标的角标状态。
 
+### 使用须知
+
+- 本扩展只改变浏览器的事件注册行为，**不绕过任何非鼠标检测**：
+  切屏检测（`visibilitychange` / `blur`）、播放进度上报、防拖拽、弹题等一概不受影响。
+- 请遵守你所用网站的服务条款，因使用本扩展产生的后果由使用者自行承担。
+
 ### 许可
 
 [MIT](LICENSE)
@@ -115,7 +121,8 @@ the video area** — while clicks, drags, scrolling and hover keep working norma
 **Install:** clone the repo, open `chrome://extensions`, enable *Developer mode*, click *Load unpacked*
 and pick the repo folder. Requires Chromium 119+.
 
-**Note:** only mouse events are affected. Non-mouse signals such as `blur`, `visibilitychange` or
-`pagehide` are untouched.
+**Note:** only mouse event registration is affected. Non-mouse signals such as `blur`,
+`visibilitychange` or `pagehide`, as well as progress reporting, anti-seek logic and in-video quizzes,
+are untouched. Please follow the terms of service of the sites you use.
 
 Licensed under the [MIT License](LICENSE).
